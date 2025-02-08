@@ -12,7 +12,7 @@ function App() {
   }, []);
 
   const fetchUsers = async () => {
-    const response = await axios.get("http://localhost:5000/users");
+    const response = await axios.get("http://crudwithmysql-production.up.railway.app/users");
     setUsers(response.data);
   };
 
@@ -23,10 +23,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (editingUserId) {
-      await axios.put(`http://localhost:5000/users/${editingUserId}`, formData);
+      await axios.put(`http://crudwithmysql-production.up.railway.app/users/${editingUserId}`, formData);
       setEditingUserId(null);
     } else {
-      await axios.post("http://localhost:5000/users", formData);
+      await axios.post("http://crudwithmysql-production.up.railway.app/users", formData);
     }
     setFormData({ name: "", email: "", age: "" });
     fetchUsers();
@@ -38,7 +38,7 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/users/${id}`);
+    await axios.delete(`http://crudwithmysql-production.up.railway.app/users/${id}`);
     fetchUsers();
   };
 
