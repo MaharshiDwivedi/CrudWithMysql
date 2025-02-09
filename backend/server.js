@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors({
-    origin: "*", // Change this to your frontend URL in production
+    origin: "https://crudwithreactnodemysql.netlify.app/", // Change this to your frontend URL in production
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"]
 }));
